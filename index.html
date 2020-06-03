@@ -1,111 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="corona virus (covid-19) statistics and information">
-    <meta name=”robots” content=”index, follow”>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="corona virus (covid-19) statistics and information"
+    />
+    <meta name="”robots”" content="”index," follow” />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="COVID-19 statistics and information" />
-    <meta property="og:description" content="Current statistics of people infected with covid-19 and the neccessary information for prevention techniques. and definition of terms" />
+    <meta
+      property="og:description"
+      content="Current statistics of people infected with covid-19 and the neccessary information for prevention techniques. and definition of terms"
+    />
     <meta property="og:url" content="https://codid19.netlify.app/" />
     <meta property="og:site_name" content="covid-19" />
-    <meta name="twitter:title" content="COVID-19 statistics and informationE">
-    <meta name="twitter:description" content="Current statistics of people infected with covid-19 and the neccessary information for prevention techniques. and definition of terms">
-    <meta name="twitter:site" content="@achinga_chris">
-    <meta name="twitter:creator" content="@achinga_chris">
+    <meta name="twitter:title" content="COVID-19 statistics and informationE" />
+    <meta
+      name="twitter:description"
+      content="Current statistics of people infected with covid-19 and the neccessary information for prevention techniques. and definition of terms"
+    />
+    <meta name="twitter:site" content="@achinga_chris" />
+    <meta name="twitter:creator" content="@achinga_chris" />
 
     <title>covid-19</title>
-    <link rel="stylesheet" href="dist/css/style.css">
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/52ac5380d0.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-</head>
-<body>
+    <!-- cusitom css -->
+    <link rel="stylesheet" href="dist/css/style.css" />
+  </head>
+  <body>
+    <!-- Back to top button -->
+    <a id="button"></a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="fas fa-house-user"></i></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <main class="container mt-4">
-        <div class="wrapper">
-            <div class="statistic">
-               
-                <div class="card">
-                    <div class="card-header">
-                      Total WorldWide Confirmed Cases
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">No. of people tested positive for covid-19</h5>
-                      <p class="card-text" id="total_cases"></p>
-                      <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" class="btn btn-warning">Preventive Measures</a>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-sm">
-                            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                                <div class="card-header">New Cases</div>
-                                <div class="card-body">
-                                    <p class="card-text" id="new_case"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm">
-                            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                                <div class="card-header">Total Recovery</div>
-                                <div class="card-body">
-                                    <p class="card-text" id="total_recovered"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm">
-                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                                <div class="card-header">Total Deaths</div>
-                                <div class="card-body">
-                                    <p class="card-text" id="total_death"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm">
-                            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                                <div class="card-header">New Deaths</div>
-                                <div class="card-body">
-                                    <p class="card-text" id="new_death"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                  </div>
-
-
-                <div class="table-responsive">
-                    <table class="table" id="countries_stat">
-                        <thead data-sticky-header="true">
-                             <tr>
-                                 <th scope="col">Country</th>
-                                 <th scope="col">Cases</th>
-                                 <th scope="col">Deaths</th>
-                                 <th scope="col">serious critical</th>
-                                 <th scope="col">total recovered</th>
-                             </tr>
-                        </thead>
-                    </table>
-                </div>  
-
-            </div>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto mb-2 mb-md-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href=""
+                >View Statistics</a
+              >
+            </li>
+          </ul>
+          <div class="d-flex">
+            <a
+              href="https://github.com/ChrisAchinga/covid-19
+            "
+              class="nav-link gh-logo"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
         </div>
-    </main>
+      </div>
+    </nav>
+    <main class="container mt-4">
+      <div class="starter-template text-center py-5 px-3">
+        <h1>COVID-19 Statistics Updates</h1>
+        <p class="lead">Global statistics and per country analysis</p>
+      </div>
+      <div class="wrapper">
+        <div class="statistic">
+          <div class="card">
+            <div class="card-header">
+              Total WorldWide Confirmed Cases
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                No. of people tested positive for covid-19
+              </h5>
+              <p class="card-text" id="total_cases"></p>
+              <a
+                href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+                target="_blank"
+                class="btn btn-warning"
+                >Preventive Measures</a
+              >
+            </div>
+          </div>
 
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <div
+                  class="card text-white bg-primary mb-3"
+                  style="max-width: 18rem;"
+                >
+                  <div class="card-header">New Cases</div>
+                  <div class="card-body">
+                    <p class="card-text" id="new_case"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <div
+                  class="card text-white bg-success mb-3"
+                  style="max-width: 18rem;"
+                >
+                  <div class="card-header">Total Recovery</div>
+                  <div class="card-body">
+                    <p class="card-text" id="total_recovered"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <div
+                  class="card text-white bg-dark mb-3"
+                  style="max-width: 18rem;"
+                >
+                  <div class="card-header">Total Deaths</div>
+                  <div class="card-body">
+                    <p class="card-text" id="total_death"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <div
+                  class="card text-white bg-danger mb-3"
+                  style="max-width: 18rem;"
+                >
+                  <div class="card-header">New Deaths</div>
+                  <div class="card-body">
+                    <p class="card-text" id="new_death"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table" id="countries_stat">
+              <thead data-sticky-header="true">
+                <tr>
+                  <th scope="col">Country</th>
+                  <th scope="col">Cases</th>
+                  <th scope="col">Deaths</th>
+                  <th scope="col">serious critical</th>
+                  <th scope="col">total recovered</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; codid19</small>
+      </div>
+    </footer>
     <!-- bootstrap js -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var btn = $("#button");
+
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+          btn.addClass("show");
+        } else {
+          btn.removeClass("show");
+        }
+      });
+
+      btn.on("click", function (e) {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "300");
+      });
+    </script>
 
     <script src="dist/js/script.js"></script>
-
-</body>
+  </body>
 </html>
