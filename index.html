@@ -45,7 +45,6 @@
   </head>
   <body>
     <!-- Back to top button -->
-    <a id="button"></a>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><i class="fas fa-house-user"></i></a>
@@ -195,22 +194,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      var btn = $("#button");
-
-      $(window).scroll(function () {
-        if ($(window).scrollTop() > 300) {
-          btn.addClass("show");
-        } else {
-          btn.removeClass("show");
-        }
-      });
-
-      btn.on("click", function (e) {
-        e.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "300");
-      });
-    </script>
 
     <script src="dist/js/script.js"></script>
   </body>
