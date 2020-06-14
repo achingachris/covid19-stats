@@ -31,23 +31,8 @@ table {
     visibility: hidden;
     z-index: 1000;
   }
-  #button::after {
-    content: "\f077";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2em;
-    line-height: 50px;
-    color: #fff;
-  }
-  #button:hover {
-    cursor: pointer;
-    background-color: #333;
-  }
-  #button:active {
-    background-color: #555;
-  }
-  #button.show {
-    opacity: 1;
-    visibility: visible;
-  }
+
+  /* .card1:hover {
+    background-color: blue;
+    color: antiquewhite;
+  } */
