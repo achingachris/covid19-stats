@@ -1,29 +1,47 @@
 {
   "name": "covid-19",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "covid19 statistics",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChrisAchinga/covid-19.git"
   },
-  "keywords": [
-    "fetch",
-    "js",
-    "html"
-  ],
-  "author": "chris achinga",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/ChrisAchinga/covid-19/issues"
   },
   "homepage": "https://github.com/ChrisAchinga/covid-19#readme",
+  "scripts": {
+    "build": "npm run css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/bootstrap/",
+    "css-prefix": "postcss --replace assets/css/bootstrap/starter.css --use autoprefixer --map",
+    "css-purge": "purgecss --css assets/css/bootstrap/starter.css --content index.html --output assets/css/bootstrap/",
+    "css": "npm run css-compile && npm run css-prefix",
+    "start": "serve --listen 3000",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css"
+  },
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "javascript",
+    "starter",
+    "template"
+  ],
+  "author": "Chris Achinga",
+  "license": "MIT",
   "dependencies": {
-    "bootstrap": "^5.0.0-alpha1",
-    "bootstrap-icons": "^1.0.0-alpha5",
-    "popper.js": "^1.16.0"
+    "bootstrap": "^5.0.0--alpha",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss-cli": "^7.1.1",
+    "purgecss": "^2.1.2",
+    "serve": "^11.3.0"
   }
 }
