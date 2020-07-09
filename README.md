@@ -3,7 +3,7 @@
 ### status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/17fddbd0-0b4d-4cef-a292-d58d86049a01/deploy-status)](https://app.netlify.com/sites/codid19/deploys)
 
-## New User Interface (codid v1.0)
+## New User Interface (codid v2.0)
 
 1. Add Navigation Bar
 2. Add footer
