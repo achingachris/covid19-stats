@@ -66,14 +66,15 @@ fetch(
   })
 // fetching data ends here ..
 
-const myFunction = () => {
-  let input, filter, table, tr, td, i, txtValue
-  input = document.getElementById('myInput')
-  filter = input.value.toUpperCase()
-  table = document.getElementById('countries_stat')
-  tr = table.getElementsByTagName('tr')
+const filterTable = () => {
+  let i, txtValue
+  const input = document.getElementById('myInput')
+  const filter = input.value.toUpperCase()
+  const table = document.getElementById('countries_stat')
+  const tr = table.getElementsByTagName('tr')
+   
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName('td')[0]
+    let td = tr[i].getElementsByTagName('td')[0]
     if (td) {
       txtValue = td.textContent || td.innerText
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
