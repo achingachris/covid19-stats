@@ -1,0 +1,33 @@
+https://api.covid19api.com/summary
+
+RESPONSE:
+
+{
+ID: "3526be39-6e58-4935-b3e9-a25269f1c054",
+Message: "",
+Global: {
+NewConfirmed: 606052,
+TotalConfirmed: 151975599,
+NewDeaths: 8827,
+TotalDeaths: 3190232,
+NewRecovered: 445914,
+TotalRecovered: 88892904,
+Date: "2021-05-02T22:58:34.516Z"
+},
+ Countries: [
+{
+ID: "be86106c-aefa-40ee-894d-ae2767690049",
+Country: "Afghanistan",
+CountryCode: "AF",
+Slug: "afghanistan",
+NewConfirmed: 0,
+TotalConfirmed: 59939,
+NewDeaths: 0,
+TotalDeaths: 2631,
+NewRecovered: 0,
+TotalRecovered: 53272,
+Date: "2021-05-02T22:58:34.516Z",
+Premium: { }
+},
+
+}

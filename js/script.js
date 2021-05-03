@@ -62,7 +62,7 @@ fetch(
     })
   )
   .catch((err) => {
-    console.log(err)
+    console.error(err)
   })
 // fetching data ends here ..
 
@@ -72,7 +72,7 @@ const filterTable = () => {
   const filter = input.value.toUpperCase()
   const table = document.getElementById('countries_stat')
   const tr = table.getElementsByTagName('tr')
-   
+
   for (i = 0; i < tr.length; i++) {
     let td = tr[i].getElementsByTagName('td')[0]
     if (td) {
@@ -85,3 +85,14 @@ const filterTable = () => {
     }
   }
 }
+
+// testing fetch new api
+fetch('https://api.covid19api.com/summary')
+  .then((response) =>
+    response.json().then((data) => {
+      console.log(data)
+    })
+  )
+  .catch((err) => {
+    console.log(err)
+  })
